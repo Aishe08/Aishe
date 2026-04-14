@@ -108,23 +108,25 @@
 <button onclick="showResult()">Покажи резултата</button>
 <div id="result"></div>
 <script>
+
+   let answers = {};
+
+function answer(question, correct) {
+    answers[question] = correct;
+}
+
+function showResult() {
     let score = 0;
-    let answered = {};
 
-    function answer(question, correct) {
-        if (answered[question]) return;
-
-        if (correct) {
+    for (let q in answers) {
+        if (answers[q]) {
             score++;
         }
-
-        answered[question] = true;
     }
 
-    function showResult() {
-        document.getElementById("result").innerHTML =
-            "Твоят резултат: " + score + " / 6";
-    }
+    document.getElementById("result").innerHTML =
+        "Твоят резултат: " + score + " / 6";
+}
 </script>
 </body>
 </html>
