@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>Тест</title>
+<style>
+        body {
+            margin: 0;
+            background: #000000;
+            color: white;
+            font-family: Times New Roman;
+            overflow: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+                
+}
+      
+</style>
+</head>
+<BODY>
+<meta charset="UTF-8">
+ <style>
+        body {
+            font-family: Arial;
+            background: #blue;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .question {
+            margin: 20px 0;
+            padding: 20px;
+            background: navy;
+            border-radius: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: violet;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: pink;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<hr>
+<H1>&#127757Тест за космоса&#127757</H1>
+<div class="question">
+    <p>1.Коя планета е най-близо до слънцето ?</p>
+    <button onclick="answer(1, true)">Меркурий</button>
+    <button onclick="answer(1, false)">Венера</button>
+    <button onclick="answer(1, false)">Нептун</button>
+</div>
+<div class="question">
+    <p>2. Как се нарича нашата галактика ?</p>
+    <button onclick="answer(2, false)">Андромеда</button>
+    <button onclick="answer(2, true)">Млечен път</button>
+    <button onclick="answer(2, false)">Орион</button>
+</div>
+<div class="question">
+    <p>3. Какво е Supernova ?</p>
+    <button onclick="answer(3, true)">Експлозия на звезда</button>
+    <button onclick="answer(3, false)">Сблъсък на галактики</button>
+    <button onclick="answer(3, false)">Раждане на нова планета</button>
+</div>
+<div class="question">
+    <p>4. Коя планета има най-силните ветрове?</p>
+    <button onclick="answer(4, true)">Нептун</button>
+    <button onclick="answer(4, false)">Земя</button>
+    <button onclick="answer(4, false)">Юпитер</button>
+</div>
+<div class="question">
+    <p>5. Каква може да остане след свръхнова?</p>
+    <button onclick="answer(4, true)">Черна дупка</button>
+    <button onclick="answer(4, false)">Комета</button>
+    <button onclick="answer(4, false)">Астероиден дъжд</button>
+</div>
+<div class="question">
+    <p>6. Коя планета е известна със своите пръстени ?</p>
+    <button onclick="answer(4, true)">Сатурн</button>
+    <button onclick="answer(4, false)">Венера</button>
+    <button onclick="answer(4, false)">Марс</button>
+</div>
+<button onclick="showResult()">Покажи резултата</button>
+<div id="result"></div>
+<script>
+    let score = 0;
+    let answered = {};
+
+    function answer(question, correct) {
+        if (answered[question]) return;
+
+        if (correct) {
+            score++;
+        }
+
+        answered[question] = true;
+    }
+
+    function showResult() {
+        document.getElementById("result").innerHTML =
+            "Твоят резултат: " + score + " / 6";
+    }
+</script>
+</body>
+</html>
